@@ -10,7 +10,7 @@ import { Button } from "../ui/button";
 
 const HeroSection = () => {
   return (
-    <section className="py-16 px-4">
+    <section className="py-10 px-4">
       <div className="container mx-auto">
         <Card>
           <CardHeader className="flex flex-col items-center text-center space-y-2">
