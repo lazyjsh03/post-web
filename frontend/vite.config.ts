@@ -3,25 +3,8 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { VitePWA } from "vite-plugin-pwa";
 import path from "path";
-import fs from "fs";
 
 export default defineConfig({
-  server: {
-    https: {
-      key: fs.readFileSync("C:/WINDOWS/system32/localhost-key.pem"),
-      cert: fs.readFileSync("C:/WINDOWS/system32/localhost.pem"),
-    },
-    host: "0.0.0.0",
-    port: 5173,
-  },
-  preview: {
-    https: {
-      key: fs.readFileSync("C:/WINDOWS/system32/localhost-key.pem"),
-      cert: fs.readFileSync("C:/WINDOWS/system32/localhost.pem"),
-    },
-    host: "0.0.0.0",
-    port: 4173,
-  },
   plugins: [
     react(),
     tailwindcss(),
