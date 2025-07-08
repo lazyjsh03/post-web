@@ -12,7 +12,12 @@ import { Button } from "../ui/button";
 import { Search, Plus, CircleUser } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 
+import { useOnlineStatus } from "@/hooks/useOnlineStatus";
+import { useInstallPrompt } from "@/hooks/useInstallPrompt";
+
 const Header = () => {
+  const { isInstallable, handleInstallClick } = useInstallPrompt();
+  const isOnline = useOnlineStatus();
   return (
     <header className="flex justify-between h-24 items-center mr-10 ml-10 border-b-2 border-gray-500">
       <div className="flex gap-10">
@@ -59,6 +64,11 @@ const Header = () => {
             글쓰기
           </Link>
         </Button>
+        {isInstallable && (
+          <Button onClick={handleInstallClick} variant="outline">
+            📱 앱 설치
+          </Button>
+        )}
         <Avatar className="flex h-12 w-12 items-center justify-center">
           <AvatarImage src="/user.jpg" alt="User" />
           <AvatarFallback>
@@ -66,6 +76,11 @@ const Header = () => {
           </AvatarFallback>
         </Avatar>
       </div>
+      {!isOnline && (
+        <div className="flex items-center gap-2 px-3 py-1 bg-yellow-100 text-yellow-800 rounded-md">
+          <span className="text-sm">🔄 오프라인 모드</span>
+        </div>
+      )}
     </header>
   );
 };
