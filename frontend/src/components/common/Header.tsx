@@ -36,14 +36,14 @@ const Header = () => {
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link to="/" className="!text-3xl">
+                <Link to="/posts" className="!text-3xl">
                   게시판
                 </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link to="/" className="!text-3xl">
+                <Link to="/posts" className="!text-3xl">
                   인기글
                 </Link>
               </NavigationMenuLink>
