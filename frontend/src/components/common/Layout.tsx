@@ -12,7 +12,11 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div>
       <Header />
-      {children}
+
+      {/* 메인 콘텐츠 */}
+      <main>{children}</main>
+
+      {/* 푸터 */}
       <Footer />
     </div>
   );
